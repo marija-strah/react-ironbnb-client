@@ -7,7 +7,7 @@ function ApartmentsList() {
     const [ apartments, setApartments ] = useState([]);
 
     useEffect( () => {
-        axios.get("https://ironbnb-m3.herokuapp.com/apartments")
+        axios.get(process.env.REACT_APP_API_URL + "/apartments")
         .then( response => {
             setApartments(response.data);
         })
